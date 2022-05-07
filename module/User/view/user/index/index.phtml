@@ -1,0 +1,40 @@
+<?php 
+    $title="Login";
+    $this->headTitle($title);
+    $form->setAttribute('action',$this->url('user',['action'=>'login']));
+    $form->prepare();
+?>
+   <h1><?php echo $this->escapeHtml($title)?></h1>
+
+<?php 
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id'));
+?>
+<table>
+
+<tr >  <td width="202px">Usuario:</td>
+<td>
+<?php 
+ echo $this->formRow($form->get('name_user'));
+
+ 
+?>
+</td>
+</tr>
+
+<tr >  <td width="202px">Contraseña:</td>
+<td>
+<?php 
+ echo $this->formRow($form->get('password'));
+
+ 
+?>
+</td>
+</tr>
+
+</table>
+<?php 
+ echo $this->formRow($form->get('submit_login'));
+
+ 
+?>

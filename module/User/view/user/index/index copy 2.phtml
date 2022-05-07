@@ -1,0 +1,51 @@
+<div class="jumbotron">
+    <h1><span class="zf-green">Listado de Clientes</span></h1>
+
+    </div>
+
+    <div class="row">
+        <a href="<?php echo $this->basePath('/user/add'); ?>"  class="btn btn-primary">Nuevo cliente</a>
+  
+    </div>  
+
+    <div class="row">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Documento</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Operación</th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php if(isset($users)):?>
+        <?php foreach($users as $user):?>
+    <tr>
+      <th scope="row"><?php echo $user->getId()?></th>
+      <td><?php echo $user->getDni()?></td>
+      <td><?php echo $user->getName()?></td>
+      <td><?php echo $user->getGender()?></td>
+      <td><?php echo $user->getAge()?></td>
+      <td>  
+      <a href="<?php echo $this->url('user',['action'=>'edit','id'=>$user->getId()]) ?>"  class="label label-default">Actualizar</a>
+                
+
+      </td>
+    </tr>
+        <?php endforeach;?>
+        <?php else:?>
+          
+            <tr>
+                <td>No records founds</td>
+            </tr>
+            <?php endif;?>   
+  </tbody>
+</table>
+
+</div>
+
+
+

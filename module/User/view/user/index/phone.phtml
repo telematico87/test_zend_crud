@@ -1,0 +1,48 @@
+<div class="jumbotron">
+    <h1><span class="zf-green">Listado de telefonos</span></h1>
+
+    </div>
+
+    <div class="row">
+        <a href="<?php echo $this->url('user',['action'=>'addphone','id'=>1]) ?>"  class="btn btn-primary">Nuevo Telefono</a>
+  
+    </div>  
+
+    <div class="row">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tipo</th>
+      <th scope="col">Teléfono</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      <?php if(isset($phones)):?>
+        <?php foreach($phones as $phone):?>
+    <tr>
+      <td><?php echo $phone?></td>
+      <td><?php echo $phone?></td>
+      
+      <td>  
+
+       
+      <a href="<?php echo $this->url('user',['action'=>'edit','id'=>$id]) ?>"  class="label label-default">delete</a>
+                
+
+      </td>
+    </tr>
+        <?php endforeach;?>
+        <?php else:?>
+          
+            <tr>
+                <td>No records founds</td>
+            </tr>
+            <?php endif;?>   
+  </tbody>
+</table>
+
+</div>
+
+
+
